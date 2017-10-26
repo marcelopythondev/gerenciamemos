@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html5>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Index</title>
+</head>
+<body>
+		<FORM calss="info" method='POST'>
+	    	{% csrf_token %}
+
+	    	<CENTER><img src="{% static 'imagens/cabecalho.png' %}" alt="" style="width:300px;height:150px;"></CENTER><br> 
+
+	    	<ol>
+	    	{% for id in lista_memo %}
+             <li><a href="{% url 'mostraultimoid' id.id %}">{{lista_memo}}</a></li>
+	    	{% endfor %}
+	    	</ol>
+	    </FORM>
+
+</body>
+</html>

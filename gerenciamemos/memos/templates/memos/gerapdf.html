@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html5>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="pdfkit-page-size" content="Legal"/>
+    <meta name="pdfkit-orientation" content="Landscape"/>
+	<title>Index</title>
+</head>
+<body>
+		<FORM calss="info" method='POST'>
+	    	{% csrf_token %}
+
+	    	<CENTER><img src="{% static 'imagens/cabecalho.png' %}" alt="" style="width:300px;height:150px;"></CENTER><br>                    
+	    	{{	form.as_p}}
+	    	<a href="{% url 'pdfview' %}">Imprmir</a>
+
+	    </FORM>
+
+</body>
+
+</html>

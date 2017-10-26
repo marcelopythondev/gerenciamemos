@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html5>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Index</title>
+    {{ form.media }}
+</head>
+<body>
+		<FORM calss="info" method='POST'>
+	    	{% csrf_token %}
+
+	    	<CENTER><img src="{% static 'imagens/cabecalho.png' %}" alt="" style="width:300px;height:150px;"></CENTER><br>
+
+    		{{ form.non_field_errors }}
+            <div class="fieldWrapper">
+                {{ form.Memo.errors }}
+                <label for="{{ form.id.id_for_label }}">Memo:</label>
+                {{ form.Memo }}
+            </div>                    
+            <div class="fieldWrapper">
+                {{ form.Setor.errors }}
+                <label for="{{ form.Setor.id_for_label }}">Setor:</label>
+                {{ form.Setor }}
+            </div>
+            <div class="fieldWrapper">
+                {{ form.Para.errors }}
+                <label for="{{ form.Para.id_for_label }}">Para:</label>
+                {{ form.Para}}
+            </div>
+            
+            <div class="fieldWrapper">
+                {{ form.Assunto.errors }}
+                <label for="{{ form.Assunto.id_for_label }}">Assunto:</label>                
+                {{ form.Assunto}}               
+            </div>
+           
+            <button type= "button" onclick="cria_campostabela" >Cria Tabela</button>
+            <button type="submit" >Salvar</button>
+
+	    </FORM>
+
+</body>
+</html>
